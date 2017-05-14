@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Inicio
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="mid-login">
+    <h1>MisVuelos <ion-icon name="plane"></ion-icon></h1>
+  </div>
+  <p>
+    Ingresa la fecha y hora de tu viaje.
+  </p>
+  <ion-list no-lines>
+    <ion-item>
+      <ion-label>Fecha</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="vuelo.fecha"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Hora</ion-label>
+      <ion-datetime displayFormat="HH:mm" [(ngModel)]="vuelo.hora"></ion-datetime>
+    </ion-item>
+  </ion-list>
+  <button block ion-button icon-left color="secondary" (click)="buscarVuelo()">
+    <ion-icon name="search"></ion-icon>
+    Buscar
+  </button>
+</ion-content>
