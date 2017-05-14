@@ -1,0 +1,43 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Vuelos Disponibles</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <h5>Fecha buscada: {{fechaBuscada}}</h5>
+  <h5>Hora buscada: {{horaBuscada}}</h5>
+  <p>Estos son los vuelos cercanos a tu búsqueda</p>
+  
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <b>Fecha</b>
+      </ion-col>
+      <ion-col>
+        <b>Hora</b>
+      </ion-col>
+      <ion-col>
+        <b>Selección</b>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let vuelo of vuelos_disponibles">
+      <ion-col>
+        {{vuelo.fecha}}
+      </ion-col>
+      <ion-col>
+        {{vuelo.hora}}
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-only color="secondary">
+          <ion-icon name="checkmark"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <button ion-button block color="secondary" (click)="irHome()">Nueva búsqueda</button>
+
+</ion-content>

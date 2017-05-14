@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { Http, Headers } from "@angular/http";
 import { Vuelo } from "../../vuelo-model";
+import { VerVuelos } from "../ver-vuelos/ver-vuelos";
 import 'rxjs/add/operator/map';
 
 @Component({
@@ -30,7 +31,10 @@ export class HomePage {
       .map(res => res.json())
       .subscribe(
         res => {
-          console.log(res)
+          this.navCtrl.push(VerVuelos, {
+            fechaBuscada: this.vuelo.fecha,
+            horaBuscada: this.vuelo.hora
+          })
         },
         err => {
           this.alertCtrl.create({
@@ -39,7 +43,7 @@ export class HomePage {
             buttons: [{
               text: "Aceptar"
             }]
-          })
+          }).present()
         }
       )
   }
