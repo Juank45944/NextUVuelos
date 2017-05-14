@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, ToastController, LoadingController } from 'ionic-angular';
 import { Http, Headers } from "@angular/http";
 import { Vuelo } from "../../vuelo-model";
+import { VerRegistrados } from "../ver-registrados/ver-registrados";
 import 'rxjs/add/operator/map';
 
 @IonicPage()
@@ -130,6 +131,9 @@ export class VerVuelos {
     }).present();
   }
 
+  irRegistrados() {
+    this.navCtrl.push(VerRegistrados);
+  }
 
 
 }

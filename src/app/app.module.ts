@@ -8,12 +8,14 @@ import { HttpModule } from "@angular/http";
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { VerVuelos } from "../pages/ver-vuelos/ver-vuelos";
+import { VerRegistrados } from "../pages/ver-registrados/ver-registrados";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    VerVuelos
+    VerVuelos,
+    VerRegistrados
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,8 @@ import { VerVuelos } from "../pages/ver-vuelos/ver-vuelos";
   entryComponents: [
     MyApp,
     HomePage,
-    VerVuelos
+    VerVuelos,
+    VerRegistrados
   ],
   providers: [
     StatusBar,
